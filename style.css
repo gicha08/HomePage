@@ -164,6 +164,7 @@ p {
     margin-bottom: 2rem;
 }
 
+/* Original centered text for Contact section */
 .content-section p {
     font-size: 1.1rem;
     max-width: 800px;
@@ -215,6 +216,7 @@ p {
 .project-card p {
     padding: 0 1.5rem 1rem 1.5rem;
     font-size: 0.95rem;
+    text-align: left; /* Keep card text left-aligned */
 }
 
 .project-link {
@@ -229,6 +231,37 @@ p {
     color: #fff;
     text-align: center;
     padding: 2rem 0;
+}
+
+/* ========================================
+   === NEW STYLES FOR UPDATED ABOUT SECTION ===
+   ========================================
+*/
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.about-image {
+    flex-basis: 30%;
+    min-width: 200px;
+}
+
+.about-image img {
+    border-radius: 50%; /* Makes the image round */
+    border: 5px solid var(--light-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    flex-basis: 70%;
+}
+
+.about-text p {
+    text-align: left; /* Overrides the centered paragraph default */
+    font-size: 1.1rem;
 }
 
 /* ======== RESPONSIVE (Mobile-friendly) ======== */
@@ -253,8 +286,29 @@ p {
     .hero-section {
         height: 70vh;
     }
+    
+    /* --- NEW 'ABOUT' MOBILE STYLES --- */
+    .about-content {
+        flex-direction: column; /* Stack image on top of text */
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 250px; /* Constrain image size on mobile */
+        margin: 0 auto 1rem auto;
+    }
+    
+    .about-text p {
+        text-align: center; /* Center text on mobile */
+    }
+    /* --- END NEW STYLES --- */
+
 
     .project-grid {
         grid-template-columns: 1fr; /* Stack projects on top of each other */
+    }
+
+    .project-card p {
+        text-align: left; /* Re-affirm left-align for project cards */
     }
 }
